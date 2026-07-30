@@ -59,7 +59,7 @@ nullaway {
 //def mockitoAgent = configurations.create("mockitoAgent")
 
 dependencies {
-    rewrite platform("org.openrewrite.recipe:rewrite-recipe-bom:3.35.0")
+    rewrite platform("org.openrewrite.recipe:rewrite-recipe-bom:3.36.0")
 
     implementation "org.springframework.boot:spring-boot-starter-webmvc"
     implementation "org.springframework.boot:spring-boot-starter-validation"
