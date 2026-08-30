@@ -19,18 +19,18 @@
     <properties>
         <java.version>25</java.version>
         <dockerImageName>sivaprasadreddy/${project.artifactId}</dockerImageName>
-        <spring-modulith.version>2.1.0</spring-modulith.version>
+        <spring-modulith.version>2.1.1</spring-modulith.version>
         <htmx-spring-boot-thymeleaf.version>5.1.0</htmx-spring-boot-thymeleaf.version>
         <datasource-micrometer-spring-boot.version>2.2.1</datasource-micrometer-spring-boot.version>
-        <bootui.version>1.12.0</bootui.version>
+        <bootui.version>1.15.0</bootui.version>
         <bootstrap.version>5.3.8</bootstrap.version>
-        <htmx.version>2.0.10</htmx.version>
+        <htmx.version>4.0.0</htmx.version>
         <font-awesome.version>7.3.0</font-awesome.version>
-        <spotless.version>3.9.0</spotless.version>
-        <palantir-java-format.version>2.96.0</palantir-java-format.version>
+        <spotless.version>3.10.1</spotless.version>
+        <palantir-java-format.version>2.97.0</palantir-java-format.version>
         <error_prone.version>2.49.0</error_prone.version>
         <nullaway.version>0.13.8</nullaway.version>
-        <archunit.version>1.4.2</archunit.version>
+        <archunit.version>1.5.0</archunit.version>
         <argLine/>
     </properties>
 
@@ -40,13 +40,6 @@
                 <groupId>org.springframework.modulith</groupId>
                 <artifactId>spring-modulith-bom</artifactId>
                 <version>${spring-modulith.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.openrewrite.recipe</groupId>
-                <artifactId>rewrite-recipe-bom</artifactId>
-                <version>3.36.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -276,7 +269,7 @@
             <plugin>
                 <groupId>am.ik.maven</groupId>
                 <artifactId>nullability-maven-plugin</artifactId>
-                <version>0.4.3</version>
+                <version>0.5.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <checking>tests</checking>
@@ -360,30 +353,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.openrewrite.maven</groupId>
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>6.45.0</version>
-                <configuration>
-                    <exportDatatables>true</exportDatatables>
-                    <activeRecipes>
-                        <recipe>org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0</recipe>
-                        <recipe>org.openrewrite.java.testing.testcontainers.TestContainersBestPractices</recipe>
-                    </activeRecipes>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.openrewrite.recipe</groupId>
-                        <artifactId>rewrite-spring</artifactId>
-                        <version>6.36.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.openrewrite.recipe</groupId>
-                        <artifactId>rewrite-testing-frameworks</artifactId>
-                        <version>3.43.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
